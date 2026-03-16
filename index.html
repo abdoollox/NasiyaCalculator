@@ -398,10 +398,11 @@ function calc() {
   var err   = document.getElementById('err');
   if (down > price) { err.style.display = 'block'; return; }
   err.style.display = 'none';
-  var rest = (price - down) + 20;
-  document.getElementById('s-price').textContent = fmt(price);
-  document.getElementById('s-down').textContent  = fmt(down);
-  document.getElementById('s-rest').textContent  = fmt(rest);
+  var restDisplay = price - down;
+  var rest = restDisplay + 20;
+  document.getElementById('s-price').textContent = '$' + Math.round(price);
+  document.getElementById('s-down').textContent  = '$' + Math.round(down);
+  document.getElementById('s-rest').textContent  = '$' + Math.round(restDisplay);
   [3,6,9].forEach(function(m) {
     document.getElementById('m'+m).textContent = '$' + Math.round(rest * (1 + rates[m]) / m);
   });
