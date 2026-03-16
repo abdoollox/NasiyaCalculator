@@ -418,11 +418,11 @@ function updateResult() {
   var total   = rest * (1 + rates[m]);
   var monthly = total / m;
   var grand   = down + total;
-  document.getElementById('r-down').textContent         = fmt(down);
+  document.getElementById('r-down').textContent         = '$' + Math.round(down);
   document.getElementById('r-months').textContent       = m;
-  document.getElementById('r-monthly').textContent      = fmt(monthly);
-  document.getElementById('r-installments').textContent = fmt(total);
-  document.getElementById('r-grand').textContent        = fmt(grand);
+  document.getElementById('r-monthly').textContent      = '$' + Math.round(monthly);
+  document.getElementById('r-installments').textContent = '$' + Math.round(total);
+  document.getElementById('r-grand').textContent        = '$' + Math.round(grand);
 }
 
 function selectPlan(m) {
